@@ -7,7 +7,10 @@
 {% block content %}
     <ul>
         {% for book in books %}
-            <li>{{ book.title }}</li>
+            <li><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></li>
         {% endfor %}
     </ul>
+    <hr>
+    <p>Total books: {{ number_of_books }}</p>
+    <p>Average raiting: {{ avg_raiting.rating__avg }}</p>
 {% endblock content %}
